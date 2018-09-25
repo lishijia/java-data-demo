@@ -4,7 +4,7 @@ import java.sql.*;
 
 /**
  * @program:
- * @description:
+ * @description: 通过jdbc连接hive对外提供的接口服务（thrift）
  * @author: lishijia
  * @create: 2018/9/25 16:37
  **/
