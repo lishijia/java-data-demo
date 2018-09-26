@@ -1,0 +1,19 @@
+SELECT order_no, seller_name,seller_type, buyer_name, buyer_type, certificate_type,certificate_no,mobile_no,quantity,settle_amount,pay_time,pay_type,pay_channel_id 
+FROM st_merchant_order where pay_time>='2018-09-01 00:00:00' AND pay_time <='2018-09-01 23:59:59';
+
+SELECT d.order_detail_no, d.order_no, d.goods_id, d.goods_code, d.goods_name, d.goods_type_code, d.settle_price, d.buy_number 
+FROM st_merchant_order o left JOIN st_merchant_order_detail d on d.order_no = o.order_no 
+where pay_time>='2018-09-01 00:00:00' AND pay_time <='2018-09-01 23:59:59';
+
+SELECT consume_no,order_no,order_detail_no,voucher_no,seller_name,seller_type,buyer_name,buyer_type,goods_id,goods_code,goods_name,goods_type_code,settle_price,consume_number,consume_settle_type,
+consume_settle_type,consume_area_name,consume_device_code,consume_device_type,consume_media_type,consume_time
+ FROM st_voucher_consume where consume_time>='2018-09-01 00:00:00' AND consume_time <='2018-09-01 23:59:59';
+
+SELECT expire_no,order_no,order_detail_no,voucher_no,seller_name,seller_type,buyer_name,buyer_type,goods_id,goods_code,goods_name,goods_type_code,settle_price,expire_number,expire_time
+ FROM st_voucher_expire;
+
+SELECT refund_no, order_no, seller_name,seller_type, buyer_name, buyer_type, quantity,amount,fee,total_amount,pay_type,pay_channel_id,refund_time  
+from st_merchant_order_refund where refund_time>='2018-09-03 00:00:00' AND refund_time <='2018-09-03 23:59:59';
+
+SELECT refund_detail_no,refund_no, order_detail_no,order_no,goods_id,goods_code,goods_name,goods_type_code,refund_number,refund_price,amount,fee,total_amount,create_time 
+FROM st_merchant_order_refund_detail
