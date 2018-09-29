@@ -1,4 +1,4 @@
-package com.jiarong.data.hive;
+package lishijia.data.hive;
 
 import java.sql.*;
 
