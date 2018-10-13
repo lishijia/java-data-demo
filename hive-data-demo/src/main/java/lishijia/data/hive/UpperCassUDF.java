@@ -1,7 +1,5 @@
 package lishijia.data.hive;
-
 import org.apache.hadoop.hive.ql.exec.UDF;
-
 /**
  * @program:
  * @description:

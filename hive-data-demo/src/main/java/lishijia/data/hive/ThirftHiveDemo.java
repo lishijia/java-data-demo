@@ -1,5 +1,4 @@
 package lishijia.data.hive;
-
 import java.sql.*;
 
 /**
