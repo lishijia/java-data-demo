@@ -20,9 +20,9 @@ create table lsj_item_delivery(
 )
 row format delimited fields terminated by ',' lines terminated by '\n';
 
-hive> load data local inpath '/home/dev/hive/order' overwrite into table lsj_order;
-hive> load data local inpath '/home/dev/hive/item' overwrite into table lsj_item;
-hive> load data local inpath '/home/dev/hive/delivery' overwrite into table lsj_item_delivery;
+hive> load data local inpath '/home/lishijia/Documents/hive/order' overwrite into table lsj_order;
+hive> load data local inpath '/home/lishijia/Documents/hive/item' overwrite into table lsj_item;
+hive> load data local inpath '/home/lishijia/Documents/hive/delivery' overwrite into table lsj_item_delivery;
 hive> add jar hdfs:////jiarong/hive/tmp/hive-data-demo-1.0-SNAPSHOT.jar
 hive> create temporary function toUpper as 'lishijia.data.hive.UpperCassUDF';
 hive> show functions;

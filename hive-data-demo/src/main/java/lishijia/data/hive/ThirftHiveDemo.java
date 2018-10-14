@@ -10,7 +10,7 @@ import java.sql.*;
 public class ThirftHiveDemo {
 
     String driverClass = "org.apache.hive.jdbc.HiveDriver";
-    String url = "jdbc:hive2://hadoop100:10000/default";
+    String url = "jdbc:hive2://master201:10000/lishijia";
 
     public static void main(String[] args) {
         long l = System.currentTimeMillis();
@@ -27,7 +27,7 @@ public class ThirftHiveDemo {
             System.out.println(conn);
             stmt = conn.createStatement();
             // hive表名
-            String tableName = "st_order";
+            String tableName = "lsj_order";
             String sql = "select * from " + tableName + " limit 10";
             System.out.println("Running:" + sql);
             ResultSet res = stmt.executeQuery(sql);
