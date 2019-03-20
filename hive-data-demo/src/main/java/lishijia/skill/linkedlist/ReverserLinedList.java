@@ -12,16 +12,32 @@ import java.util.Arrays;
  **/
 public class ReverserLinedList {
 
-    Node reverser(Node head){
+    Node reverserWithRecursion(Node head){
         if(head == null || head.getNext() == null){
             return head;
         }
-        Node newHead = reverser(head.getNext());
+        Node newHead = reverserWithRecursion(head.getNext());
         // 设置当前的下一个的下一个是当前(反转)
         head.getNext().setNext(head);
         head.setNext(null);
         return newHead;
     }
+
+    Node reverserWithWhile(Node head){
+        Node newHead = null;
+        Node curHead = head;
+
+        while(curHead != null){
+            Node node = curHead.getNext();
+            curHead.setNext(newHead);
+            newHead = curHead;
+            curHead = node;
+        }
+
+        return newHead;
+    }
+
+
 
     public static void main(String args[]){
         LinkedListCreator linkedListCreator = new LinkedListCreator();
@@ -29,7 +45,9 @@ public class ReverserLinedList {
         Node.print(node);
 
         ReverserLinedList reverserLinedList = new ReverserLinedList();
-        Node.print(reverserLinedList.reverser(node));
+//        Node.print(reverserLinedList.reverserWithRecursion(node));
+
+        Node.print(reverserLinedList.reverserWithWhile(node));
     }
 
 }
