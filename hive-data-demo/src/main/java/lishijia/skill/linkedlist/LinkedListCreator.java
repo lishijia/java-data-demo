@@ -24,6 +24,11 @@ public class LinkedListCreator {
     }
 
     Node createWithFor(List<Integer> data){
+
+        if(data.isEmpty()){
+            return null;
+        }
+
         Node head = new Node(data.get(0));
         Node pre = head;
         for(int i=1;i<data.size();i++){
